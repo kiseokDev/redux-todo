@@ -14,7 +14,11 @@ export default function TestTodoItem({ item }) {
   return (
     <div>
       <input type="text" value={item.text} onChange={editTodoHandler} />
-      <input type="checkbox" checked={item.isComplete} onChange={toggleTodo} />
+      <input
+        type="checkbox"
+        checked={item.isCompleted}
+        onChange={() => dispatch(toggleTodo(item))}
+      />
       <button
         type="button"
         onClick={() => {
